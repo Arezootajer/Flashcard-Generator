@@ -8,7 +8,7 @@ function ClozeCard(text, cloze) {
 	if (text.includes(cloze)){
     this.fulltext = text;
     this.cloze = cloze;
-    this.partial = this.text.replace(this.cloze, '....');
+    this.partial = this.fulltext.replace(this.cloze, '....');
    }
    else {
    	console.log(cloze +"doesn't appear in"+ text);
@@ -16,26 +16,23 @@ function ClozeCard(text, cloze) {
 
 }
 // methods
-ClozeCard.prototype.cloze = function() {
+ClozeCard.prototype.printCloze = function() {
 
     console.log(this.cloze);
 }
 
-ClozeCard.prototype.fullText = function() {
+ClozeCard.prototype.printFullText = function() {
 
     console.log(this.fulltext);
 }
 
-ClozeCard.prototype.partial = function() {
+ClozeCard.prototype.printPartial = function() {
 
     console.log(this.partial);
 }
 
 
-ClozeCard.prototype.partial = function() {
 
-    console.log(this.partial);
-}
 
 
 module.exports = ClozeCard;

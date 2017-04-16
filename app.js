@@ -69,9 +69,9 @@ var inquirer = require('inquirer');
                 var text = answer.text;
                 var cloze = answer.cloze;
                 var newCloze = new ClozeCard(text, cloze);
-               newCloze.cloze();
-               newCloze.fullText();
-               newCloze.partial();
+               newCloze.printCloze();
+               newCloze.printFullText();
+               newCloze.printPartial();
 			
                 
             });
