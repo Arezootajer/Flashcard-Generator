@@ -1,7 +1,3 @@
-// require fs
-var fs = require("fs");
-
-
 
 // constructor for Basiccard
 function BasicCard(front, back) {
@@ -10,12 +6,12 @@ function BasicCard(front, back) {
    }
 //methods
 
-   BasicCard.prototype.front = function() {
+   BasicCard.prototype.printfront = function() {
 
     console.log(this.front);
 }
 
-BasicCard.prototype.back = function() {
+BasicCard.prototype.printback = function() {
 
     console.log(this.back);
 }

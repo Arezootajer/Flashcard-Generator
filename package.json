@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Arezootajer/Flashcard-Generator#readme",
   "dependencies": {
+    "inquirer": "^3.0.6",
     "request": "^2.81.0"
   }
 }

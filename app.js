@@ -2,7 +2,7 @@
 var BasicCard = require('./basic.js');
 var ClozeCard = require('./cloze.js');
 var inquirer = require('inquirer');
-var fs = require('fs');
+
  inquirer.prompt([{
         name: 'type',
         message: 'What kind of flashcard would you like to create?',
@@ -38,8 +38,8 @@ var fs = require('fs');
                 }
             }]).then(function(answer) {
                 var newBasicCard = new BasicCard(answer.front, answer.back);
-                newBasicCard.front();
-                 newBasicCard.back();
+                newBasicCard.printfront();
+                 newBasicCard.printback();
            
             });
         } else if (answer.type === 'cloze-flash-card') {
@@ -73,9 +73,9 @@ var fs = require('fs');
                newCloze.fullText();
                newCloze.partial();
 			
-                }
+                
             });
         }
     });
-};
+
 
