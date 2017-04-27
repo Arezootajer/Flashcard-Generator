@@ -13,10 +13,22 @@ var inquirer = require('inquirer');
             name: 'cloze-flash-card'
         }]
     }]).then(function(answer) {
+        // so this totally works, but it might be nice to break out the prompts for basic and cloze flash cards into their own separate functions
         if (answer.type === 'basic-flash-card') {
             inquirer.prompt([{
                 name: 'front',
                 message: 'What is the question?',
+                // You do more or less the same validation for all of these questions, it'd be nice to refactor 
+                // these validations to all use the same function. That could look something like:
+                // function validateInputPresence (promptMessage, input) {
+                //     if (input === '') {
+                //         console.log(promptMessage)
+                //         return false
+                //     }
+                //     return true
+                // }
+                // and then you could bind that function with the necessary prompt message and voila!
+                // validate: validateInputPresence.bind(this, 'Please provide a question')
                 validate: function(input) {
                     if (input === '') {
                         console.log('Please provide a question');
@@ -37,9 +49,10 @@ var inquirer = require('inquirer');
                     }
                 }
             }]).then(function(answer) {
+                // I know it seems silly to concern yourself with keeping indentation consistent, but the visual clarity it adds is well worth it in my experience
                 var newBasicCard = new BasicCard(answer.front, answer.back);
                 newBasicCard.printfront();
-                 newBasicCard.printback();
+                newBasicCard.printback();
            
             });
         } else if (answer.type === 'cloze-flash-card') {
@@ -69,9 +82,9 @@ var inquirer = require('inquirer');
                 var text = answer.text;
                 var cloze = answer.cloze;
                 var newCloze = new ClozeCard(text, cloze);
-               newCloze.printCloze();
-               newCloze.printFullText();
-               newCloze.printPartial();
+                newCloze.printCloze();
+                newCloze.printFullText();
+                newCloze.printPartial();
 			
                 
             });

@@ -1,5 +1,6 @@
 // require fs
-var fs = require("fs");
+// doesn't seem like this is necessary anymore..
+// var fs = require("fs");
 
 
 
@@ -15,6 +16,8 @@ function ClozeCard(text, cloze) {
    }
 
 }
+
+// Nice job sticking these methods on the prototype
 // methods
 ClozeCard.prototype.printCloze = function() {
 
