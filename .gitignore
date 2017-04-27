@@ -1,2 +1,3 @@
-node-modules
+# had the right idea, just mixed up the hyphen (-) and underscore (_) 🙃
+node_modules
 .DS_store

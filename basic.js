@@ -3,10 +3,10 @@
 function BasicCard(front, back) {
     this.front = front;
     this.back = back;
-   }
+}
 //methods
 
-   BasicCard.prototype.printfront = function() {
+BasicCard.prototype.printfront = function() {
 
     console.log(this.front);
 }
